@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>马誉洲 · 全栈开发 / AI Agent</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#f6f7f9;--card:#fff;--line:#e5e9f0;--ink:#0f1a2b;--ink2:#4a5b70;--ink3:#8b98ab;--blue:#1b4f8a;--blue2:#2b6cb0;--teal:#0e7c66}
+  body{background:var(--bg);color:var(--ink);font-size:15px;line-height:1.7;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line);background:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;color:var(--blue2);font-weight:700}
+  h1{font-size:38px;font-weight:750;letter-spacing:-.02em;margin:10px 0 6px}
+  .role{font-size:16px;color:var(--ink2)}
+  .role b{color:var(--ink)}
+  .intro{margin-top:18px;color:var(--ink2);max-width:640px;font-size:14.5px}
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .links a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:13.5px;
+    padding:8px 15px;border-radius:99px;border:1px solid var(--line);color:var(--ink2);background:#fff;transition:.16s}
+  .links a:hover{border-color:#bfd4ec;color:var(--blue);background:#f7fafd}
+  .links a.pri{background:var(--blue);border-color:var(--blue);color:#fff}
+  .links a.pri:hover{background:#16406e;color:#fff}
+
+  section{padding:44px 0 0}
+  h2{font-size:13px;letter-spacing:.1em;color:var(--ink3);font-weight:700;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04);transition:.16s;text-decoration:none;color:inherit;display:block}
+  .card:hover{border-color:#bfd4ec;box-shadow:0 4px 16px rgba(27,79,138,.08);transform:translateY(-1px)}
+  .card h3{font-size:15.5px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .card .tag{font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:4px;background:#eef4fb;color:#2b6cb0}
+  .card .tag.new{background:#e8f7f2;color:#0e7c66}
+  .card p{font-size:13px;color:var(--ink3);margin-top:7px;line-height:1.65}
+  .card .stack{font-size:11.5px;color:var(--ink3);margin-top:9px;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .card .stack span{background:#f4f6f9;padding:1.5px 6px;border-radius:4px;margin-right:4px;display:inline-block}
+
+  .skills{display:flex;flex-wrap:wrap;gap:7px}
+  .skills span{font-size:12.5px;padding:4px 11px;border-radius:6px;background:#fff;border:1px solid var(--line);color:var(--ink2)}
+  .skills span.hi{background:#eef4fb;border-color:#d5e5f7;color:#1b4f8a;font-weight:600}
+
+  .timeline{border-left:2px solid var(--line);padding-left:20px;margin-left:4px}
+  .tl{position:relative;padding-bottom:20px}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:-26px;top:7px;width:9px;height:9px;border-radius:50%;
+    background:#fff;border:2.5px solid var(--blue2)}
+  .tl .d{font-size:12px;color:var(--blue2);font-weight:700}
+  .tl .t{font-size:14.5px;font-weight:600;margin-top:2px}
+  .tl .s{font-size:12.5px;color:var(--ink3);margin-top:1px}
+
+  footer{margin-top:56px;padding:26px 0 60px;border-top:1px solid var(--line);
+    color:var(--ink3);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--blue2);text-decoration:none}
+  @media(max-width:720px){
+    header{padding:40px 0 30px} h1{font-size:29px}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">PORTFOLIO · 2027 届</div>
+    <h1>马誉洲</h1>
+    <div class="role"><b>苏州科技大学</b> · 计算机科学与技术 · 本科 · 2027 届　|　求职方向：<b>Java 全栈开发 / AI Agent</b></div>
+    <p class="intro">
+      做后端用 Spring Cloud 搭微服务，做前端用 Vue 3 拼页面，也折腾 Agent 的工具调用与 RAG 检索。
+      习惯把技术拆到能讲清原理为止，重视边界 case 与降级方案。
+    </p>
+    <div class="links">
+      <a class="pri" href="https://myzhgjb.github.io/suda-1111-jobfair/" target="_blank">苏大招聘会岗位库 ↗</a>
+      <a href="qiuzhao.html">秋招信息站</a>
+      <a href="https://github.com/myzhgjb" target="_blank">GitHub</a>
+      <a href="mailto:859790166@qq.com">邮箱</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>秋招工作台</h2>
+    <div class="grid">
+      <a class="card" href="https://myzhgjb.github.io/suda-1111-jobfair/" target="_blank">
+        <h3>苏大 11·11 招聘会岗位库 <span class="tag new">308 家 / 1406 岗</span></h3>
+        <p>把主办方一份 6 列 Excel 变成可检索的全量库：20 个岗位类别、企业视图 / 岗位视图双切换、断网可用。</p>
+        <div class="stack"><span>Vanilla JS</span><span>两级分类</span><span>GitHub Pages</span></div>
+      </a>
+      <a class="card" href="https://github.com/myzhgjb/jobfair-job-screening" target="_blank">
+        <h3>招聘会全流程 Skill <span class="tag new">v2</span></h3>
+        <p>给 AI 助手用的作战包：活动识别 → 数据获取 → 分类 → 匹配 → 手机投递清单 → 路线规划，六阶段全自动化。</p>
+        <div class="stack"><span>Skill</span><span>Python</span><span>PWA</span></div>
+      </a>
+      <a class="card" href="qiuzhao.html">
+        <h3>2027 届秋招信息站</h3>
+        <p>投递记录、招聘会时间线、各场岗位数据与简历版本，一处归档。</p>
+        <div class="stack"><span>时间线</span><span>投递追踪</span></div>
+      </a>
+      <a class="card" href="https://szd-1111-apply.app.workbuddy.host/?sharecode=FZTYPK5ZHW" target="_blank">
+        <h3>11·11 现场投递清单 <span class="tag">PWA</span></h3>
+        <p>手机上勾选投递状态，本地保存，可导出 Markdown 直接交给 AI 整理。</p>
+        <div class="stack"><span>PWA</span><span>localStorage</span><span>离线</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>项目</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/myzhgjb/oj-platform" target="_blank">
+        <h3>Coding 在线刷题平台</h3>
+        <p>微服务架构的 OJ：Nacos 注册配置、Gateway 路由、Sentinel 熔断降级，判题走 MQ 异步 + Docker 沙箱隔离。</p>
+        <div class="stack"><span>Spring Cloud Alibaba</span><span>Vue 3</span><span>Docker</span></div>
+      </a>
+      <a class="card" href="https://github.com/myzhgjb/seckill-mall" target="_blank">
+        <h3>高并发闪购商城</h3>
+        <p>Redis Lua 预减库存 + 乐观锁防超卖 + MQ 削峰 + 多级缓存 + 限流降级，零依赖 Node 实现。</p>
+        <div class="stack"><span>Redis</span><span>MQ</span><span>Node</span></div>
+      </a>
+      <a class="card" href="https://github.com/myzhgjb/agent-customer-service" target="_blank">
+        <h3>智能客服 Agent</h3>
+        <p>意图识别 + RAG 混合检索 + Function Calling 工具调用 + DFA 敏感词过滤 + 令牌桶限流。</p>
+        <div class="stack"><span>RAG</span><span>Function Calling</span><span>Node</span></div>
+      </a>
+      <a class="card" href="https://github.com/myzhgjb/mediahub" target="_blank">
+        <h3>视频素材资产管理系统</h3>
+        <p>大文件分片上传 / 断点续传 / 秒传，转码任务队列，万级素材虚拟列表。</p>
+        <div class="stack"><span>React</span><span>Fastify</span><span>SQLite</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>技能栈</h2>
+    <div class="skills">
+      <span class="hi">Java</span><span class="hi">Spring Boot</span><span class="hi">Spring Cloud Alibaba</span>
+      <span>MyBatis-Plus</span><span class="hi">Redis</span><span class="hi">MySQL</span>
+      <span>RabbitMQ</span><span>Elasticsearch</span><span class="hi">Docker</span>
+      <span>Linux</span><span>Git / Maven</span>
+      <span class="hi">Vue 3</span><span>Element Plus</span><span>TypeScript</span><span>Vite</span>
+      <span>Python</span><span>RAG / Function Calling</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>经历</h2>
+    <div class="timeline">
+      <div class="tl">
+        <div class="d">2026.09 – 至今</div>
+        <div class="t">2027 届秋招</div>
+        <div class="s">投递互联网 / 制造 / 国企方向，主攻 Java 后端与 AI 应用岗</div>
+      </div>
+      <div class="tl">
+        <div class="d">2025.06 – 2025.08</div>
+        <div class="t">寻伴 · 兴趣组队社交平台</div>
+        <div class="s">编辑距离推荐 + Redisson 分布式锁 + WebSocket 实时聊天（<100ms）</div>
+      </div>
+      <div class="tl">
+        <div class="d">2025.03 – 2025.06</div>
+        <div class="t">Coding 在线刷题平台（OJ）</div>
+        <div class="s">微服务架构 + 异步判题 + Docker 沙箱 + AI 代码分析</div>
+      </div>
+      <div class="tl">
+        <div class="d">2024.06 – 2024.12</div>
+        <div class="t">苏州科技大学 · 虚拟现实实验室</div>
+        <div class="s">Web 全栈开发：用户管理、设备管理、数据可视化三大模块</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 马誉洲 · 苏州科技大学计算机科学与技术</div>
+    <div><a href="https://github.com/myzhgjb" target="_blank">GitHub</a> · <a href="mailto:859790166@qq.com">859790166@qq.com</a></div>
+  </footer>
+</div>
+
+</body>
+</html>

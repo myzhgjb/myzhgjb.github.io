@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2027 届秋招信息站 · 马誉洲</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#f6f7f9;--card:#fff;--line:#e5e9f0;--ink:#0f1a2b;--ink2:#4a5b70;--ink3:#8b98ab;
+    --blue:#1b4f8a;--blue2:#2b6cb0;--teal:#0e7c66;--amber:#b45309}
+  body{background:var(--bg);color:var(--ink);font-size:15px;line-height:1.7;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  header{padding:48px 0 30px;border-bottom:1px solid var(--line);background:#fff}
+  .kicker{font-size:12px;letter-spacing:.16em;color:var(--blue2);font-weight:700}
+  h1{font-size:32px;font-weight:750;letter-spacing:-.02em;margin:9px 0 6px}
+  .sub{color:var(--ink3);font-size:13.5px}
+  .nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .nav a{font-size:13px;text-decoration:none;color:var(--ink2);border:1px solid var(--line);
+    background:#fff;padding:6px 13px;border-radius:99px}
+  .nav a:hover{border-color:#bfd4ec;color:var(--blue)}
+  .nav a.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 0}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+  .stat .n{font-size:24px;font-weight:750;line-height:1.2}
+  .stat .l{font-size:12px;color:var(--ink3);margin-top:2px}
+  .stat.hot .n{color:var(--blue2)}
+
+  section{padding:38px 0 0}
+  h2{font-size:17px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:9px}
+  h2::before{content:"";width:3px;height:15px;border-radius:2px;background:var(--blue2)}
+  .note{color:var(--ink3);font-size:12.8px;margin-bottom:14px}
+
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+    border-radius:11px;overflow:hidden}
+  thead th{background:#fafbfd;text-align:left;font-size:11.5px;font-weight:700;color:var(--ink3);
+    padding:10px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:11px 13px;border-bottom:1px solid #eef2f8;font-size:13px;vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#fbfcfe}
+  .co{font-weight:600}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:1.5px 8px;border-radius:99px;white-space:nowrap}
+  .p-offer{background:#e8f7f2;color:#0e7c66}
+  .p-ing{background:#eef4fb;color:#1b4f8a}
+  .p-wait{background:#f1f5f9;color:#64748b}
+  .p-fail{background:#fdeceb;color:#b91c1c}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+    text-decoration:none;color:inherit;display:block;transition:.16s}
+  .card:hover{border-color:#bfd4ec;box-shadow:0 4px 16px rgba(27,79,138,.08)}
+  .card h3{font-size:14.5px;font-weight:700}
+  .card p{font-size:12.8px;color:var(--ink3);margin-top:6px;line-height:1.65}
+  .card .meta{font-size:11.5px;color:var(--blue2);margin-top:9px;font-weight:600}
+
+  .timeline{border-left:2px solid var(--line);padding-left:20px;margin-left:4px}
+  .tl{position:relative;padding-bottom:18px}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:-26px;top:7px;width:9px;height:9px;border-radius:50%;
+    background:#fff;border:2.5px solid var(--blue2)}
+  .tl.done::before{background:var(--blue2)}
+  .tl .d{font-size:12px;color:var(--blue2);font-weight:700}
+  .tl .t{font-size:14.5px;font-weight:600;margin-top:2px}
+  .tl .s{font-size:12.5px;color:var(--ink3)}
+
+  .empty{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:11px 14px;
+    font-size:12.6px;color:#78350f;line-height:1.75;margin-top:12px}
+  footer{margin-top:50px;padding:24px 0 56px;border-top:1px solid var(--line);color:var(--ink3);font-size:12.5px}
+  footer a{color:var(--blue2);text-decoration:none}
+  @media(max-width:720px){
+    .stats{grid-template-columns:repeat(2,1fr)} .cards{grid-template-columns:1fr}
+    h1{font-size:25px} table{font-size:12px}
+    thead th,tbody td{padding:9px 10px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">2027 届 · 秋招</div>
+    <h1>秋招信息站</h1>
+    <div class="sub">投递记录、招聘会岗位数据、时间线与资源，一处归档 · 最后更新 2026-11-11</div>
+    <div class="nav">
+      <a href="index.html">← 个人主页</a>
+      <a href="https://myzhgjb.github.io/suda-1111-jobfair/" target="_blank">岗位全库 ↗</a>
+      <a class="on" href="qiuzhao.html">秋招信息</a>
+      <a href="https://github.com/myzhgjb/jobfair-job-screening" target="_blank">招聘会 Skill ↗</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stats">
+    <div class="stat hot"><div class="n">3</div><div class="l">已投递企业</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">参加 / 计划参加的招聘会</div></div>
+    <div class="stat"><div class="n">1406</div><div class="l">已整理岗位（苏大 11·11）</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">进入面试流程</div></div>
+  </div>
+
+  <section>
+    <h2>投递记录</h2>
+    <div class="note">状态口径：待反馈 / 笔试中 / 面试中 / 已挂 / Offer</div>
+    <table>
+      <thead><tr><th>日期</th><th>公司</th><th>投递岗位</th><th>渠道</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>2026-11-11</td><td class="co">苏大 11·11 校园苏州日（现场）</td><td>待现场投递</td><td>现场展位</td><td><span class="pill p-wait">待投递</span></td></tr>
+        <tr><td>2026-10-17</td><td class="co">佳兆业物业集团</td><td>信息技术岗（NKP 管培生 · 信息技术方向）</td><td>苏科大供需洽谈会 · 展位 93</td><td><span class="pill p-ing">面试中</span></td></tr>
+        <tr><td>2026-09-29</td><td class="co">宸微设备科技（苏州）</td><td>软件工程师（2027 届校招 13 岗中最对口）</td><td>51job 校招网申</td><td><span class="pill p-wait">待反馈</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>招聘会时间线</h2>
+    <div class="note">参加过的标实心点；计划中的标空心点</div>
+    <div class="timeline">
+      <div class="tl">
+        <div class="d">2026-11-18</div>
+        <div class="t">苏州科技大学 · 电子与信息工程学院招聘会（二）</div>
+        <div class="s">23 家企业 · 字节系外包 Java 20 人、唯乐高后端、数在科技 C++ 实习</div>
+      </div>
+      <div class="tl">
+        <div class="d">2026-11-13</div>
+        <div class="t">苏州科技大学 ·「双高协同」校级专场</div>
+        <div class="s">44 家 · 盛合晶微软件开发、安驰控制 .NET/嵌入式</div>
+      </div>
+      <div class="tl done">
+        <div class="d">2026-11-11</div>
+        <div class="t">苏州大学 · 2026「校园苏州日」全国秋招</div>
+        <div class="s">308 家 / 1406 岗 · 文体中心体育馆 · <a href="https://myzhgjb.github.io/suda-1111-jobfair/" target="_blank">岗位全库 ↗</a></div>
+      </div>
+      <div class="tl done">
+        <div class="d">2026-10-17</div>
+        <div class="t">苏州科技大学 · 江苏省 2027 届公益供需洽谈会</div>
+        <div class="s">150 家 · 已投佳兆业物业信息技术岗</div>
+      </div>
+      <div class="tl done">
+        <div class="d">2026-09-23</div>
+        <div class="t">江南大学 · 秋季招聘会</div>
+        <div class="s">304 家 / 1239 岗 · 已做企业信息整理</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>岗位数据</h2>
+    <div class="cards">
+      <a class="card" href="https://myzhgjb.github.io/suda-1111-jobfair/" target="_blank">
+        <h3>苏大 11·11 全量库</h3>
+        <p>308 家企业、1406 个岗位，20 个类别，企业视图 / 岗位视图双切换，支持搜索与筛选。</p>
+        <div class="meta">打开 →</div>
+      </a>
+      <a class="card" href="https://myzhgjb.github.io/suda-1111-jobfair/match.html" target="_blank">
+        <h3>背景匹配表</h3>
+        <p>按 Java 全栈背景打分：强相关 4 条、软件开发 86 条、相关 22 条，按匹配度排序。</p>
+        <div class="meta">打开 →</div>
+      </a>
+      <a class="card" href="https://github.com/myzhgjb/suda-1111-jobfair/tree/main/data" target="_blank">
+        <h3>结构化数据（CSV）</h3>
+        <p>原始岗位表 / 企业表 / 岗位表，UTF-8 BOM，Excel 直接打开。</p>
+        <div class="meta">GitHub →</div>
+      </a>
+      <a class="card" href="https://github.com/myzhgjb/jobfair-job-screening" target="_blank">
+        <h3>招聘会全流程 Skill</h3>
+        <p>下次遇到新招聘会，把表丢给 AI，三件套自动产出。</p>
+        <div class="meta">GitHub →</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>资源</h2>
+    <div class="cards">
+      <a class="card" href="https://github.com/myzhgjb" target="_blank">
+        <h3>简历与项目</h3>
+        <p>全栈开发简历、OJ 平台、闪购商城、Agent 客服等项目的源码与说明。</p>
+        <div class="meta">GitHub →</div>
+      </a>
+      <a class="card" href="https://szd-1111-apply.app.workbuddy.host/?sharecode=FZTYPK5ZHW" target="_blank">
+        <h3>现场投递清单（PWA）</h3>
+        <p>手机上勾选投递状态，本地保存，可导出 Markdown 交给 AI 整理。</p>
+        <div class="meta">打开 →</div>
+      </a>
+    </div>
+    <div class="empty">
+      <b>说明：</b>本页只放公开可查的招聘会信息与个人投递进度，不含任何企业内部资料。
+      岗位数据来自主办方公开的岗位需求表，企业规模与技术要点为推断，投递前请以官方说明为准。
+    </div>
+  </section>
+
+  <footer>
+    © 2026 马誉洲 · <a href="index.html">个人主页</a> · <a href="https://github.com/myzhgjb" target="_blank">GitHub</a>
+  </footer>
+</div>
+
+</body>
+</html>
