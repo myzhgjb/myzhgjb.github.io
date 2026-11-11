@@ -75,6 +75,10 @@
     h1{font-size:25px} table{font-size:12px}
     thead th,tbody td{padding:9px 10px}
   }
+
+  th.zidh, td.zid{{width:56px;text-align:center;font-variant-numeric:tabular-nums}}
+  td.zid{{font-weight:700;color:#1b4f8a}}
+  .pill.p-ok{{background:#d1fae5;color:#065f46}}
 </style>
 </head>
 <body>
@@ -96,7 +100,7 @@
 <div class="wrap">
 
   <div class="stats">
-    <div class="stat hot"><div class="n">3</div><div class="l">已投递企业</div></div>
+    <div class="stat hot"><div class="n">26</div><div class="l">已投递企业（11·11 现场 24 家）</div></div>
     <div class="stat"><div class="n">5</div><div class="l">参加 / 计划参加的招聘会</div></div>
     <div class="stat"><div class="n">1406</div><div class="l">已整理岗位（苏大 11·11）</div></div>
     <div class="stat"><div class="n">1</div><div class="l">进入面试流程</div></div>
@@ -104,13 +108,36 @@
 
   <section>
     <h2>投递记录</h2>
-    <div class="note">状态口径：待反馈 / 笔试中 / 面试中 / 已挂 / Offer</div>
+    <div class="note">11·11 现场按下表展位号逐家投递，共 24 家已录入；其中 11 家已确认或高概率，13 家仅记得岗位、企业名待核对。现场估计还有约 10 家未记录。状态口径：待反馈 / 笔试中 / 面试中 / 已挂 / Offer</div>
     <table>
-      <thead><tr><th>日期</th><th>公司</th><th>投递岗位</th><th>渠道</th><th>状态</th></tr></thead>
+      <thead><tr><th>日期</th><th class="zidh">展位</th><th>公司</th><th>投递岗位</th><th>渠道</th><th>状态</th></tr></thead>
       <tbody>
-        <tr><td>2026-11-11</td><td class="co">苏大 11·11 校园苏州日（现场）</td><td>待现场投递</td><td>现场展位</td><td><span class="pill p-wait">待投递</span></td></tr>
-        <tr><td>2026-10-17</td><td class="co">佳兆业物业集团</td><td>信息技术岗（NKP 管培生 · 信息技术方向）</td><td>苏科大供需洽谈会 · 展位 93</td><td><span class="pill p-ing">面试中</span></td></tr>
-        <tr><td>2026-09-29</td><td class="co">宸微设备科技（苏州）</td><td>软件工程师（2027 届校招 13 岗中最对口）</td><td>51job 校招网申</td><td><span class="pill p-wait">待反馈</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">26</td><td class="co">江苏协昌电子科技集团</td><td>软件储备工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">33</td><td class="co">待核对</td><td>软件开发</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">36</td><td class="co">待核对 · 疑昆高新芯微电子</td><td>软件测试、嵌入式软件测试</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">38</td><td class="co">苏州旭创科技</td><td>IT 类</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">43</td><td class="co">待核对</td><td>测试工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">47</td><td class="co">待核对 · 疑信立盛电子</td><td>算法工程师（视觉方向）</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">48</td><td class="co">江苏博云科技</td><td>云服务 / 云原生 AI 平台软件开发</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">49</td><td class="co">待核对</td><td>算法工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">50</td><td class="co">待核对 · 疑江苏精微特电子</td><td>软件测试（PCBA 板级）</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">51</td><td class="co">兴威联电气（苏州）</td><td>后端开发、嵌入式软件助理</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">52</td><td class="co">待核对</td><td>储备生</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">53</td><td class="co">昆山宏致电子</td><td>PM（电子信息方向）</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ing">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">58</td><td class="co">昆高新芯微电子（江苏）</td><td>数字 IC / IC 前端设计</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ing">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">64</td><td class="co">苏州千机智能技术</td><td>Java 全栈</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ing">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">67</td><td class="co">待核对 · 疑苏州旭创科技</td><td>管培生</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">68</td><td class="co">待核对</td><td>算法工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">69</td><td class="co">苏州南洋软件科技</td><td>初级技术工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">70</td><td class="co">待核对 · 疑苏州中格软件</td><td>AI 应用开发工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">71</td><td class="co">待核对</td><td>嵌入式软件开发工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">72</td><td class="co">待核对</td><td>嵌入式软件工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">73</td><td class="co">苏州拉普拉素人工智能科技</td><td>AI 全栈交付工程师</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">78</td><td class="co">苏州轴承厂</td><td>AI 算法 / 数据架构岗</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ok">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">91</td><td class="co">苏州天准科技</td><td>软件工程师（C#，嵌入式方向）</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-ing">已投递</span></td></tr>
+        <tr><td>2026-11-11</td><td class="zid">199</td><td class="co">待核对（新能源段）</td><td>测试</td><td>苏大 11·11 · 现场展位</td><td><span class="pill p-wait">待核对</span></td></tr>
+        <tr><td>2026-10-17</td><td class="zid">—</td><td class="co">佳兆业物业集团</td><td>信息技术岗（NKP 管培生 · 信息技术方向）</td><td>苏科大供需洽谈会 · 展位 93</td><td><span class="pill p-ing">面试中</span></td></tr>
+        <tr><td>2026-09-29</td><td class="zid">—</td><td class="co">宸微设备科技（苏州）</td><td>软件工程师（2027 届校招 13 岗中最对口）</td><td>51job 校招网申</td><td><span class="pill p-wait">待反馈</span></td></tr>
       </tbody>
     </table>
   </section>
