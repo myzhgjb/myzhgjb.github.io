@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11·13 双高协同招聘会 · 月薪10k以上岗位筛选</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f3f5f9;--card:#fff;--line:#e3e9f2;--line2:#eef2f8;
+  --ink:#0f1a2b;--ink2:#46586e;--ink3:#8a97a9;
+  --blue:#16436B;--blue2:#1F6FB2;--blue3:#eaf2fb;
+  --a:#d93025;--b:#ef8a17;--c:#6b7686;
+  --ok:#0e7c66;--warn:#b45309;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.04);
+}
+body{background:var(--bg);color:var(--ink);font-size:14px;line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--blue2)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* topbar */
+.top{position:sticky;top:0;z-index:20;background:var(--blue);color:#fff;box-shadow:0 2px 10px rgba(16,24,40,.18)}
+.top .wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.top .tt{font-size:14.5px;font-weight:750;letter-spacing:.3px;margin-right:4px}
+.nav{display:flex;gap:5px;flex-wrap:wrap}
+.nav a{border:1px solid rgba(255,255,255,.32);color:#dbe9f5;text-decoration:none;font-size:12.5px;
+  padding:4px 11px;border-radius:14px;white-space:nowrap}
+.nav a:hover{background:rgba(255,255,255,.14);color:#fff}
+.prog{margin-left:auto;font-size:12.5px;font-weight:700;color:#a5e8b8;background:rgba(255,255,255,.1);
+  padding:4px 12px;border-radius:14px;white-space:nowrap}
+.pbar{height:3px;background:rgba(255,255,255,.14)}
+.pbar i{display:block;height:100%;width:0;background:#7ee2a8;transition:width .25s}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#16436B,#1F6FB2);color:#fff;padding:30px 0 26px}
+.kicker{font-size:11.5px;letter-spacing:.15em;font-weight:700;color:#bcd9f2}
+h1{font-size:25px;font-weight:760;letter-spacing:-.01em;margin-top:8px;line-height:1.35}
+h1 small{display:block;font-size:13.5px;font-weight:500;color:#d3e5f5;margin-top:7px;letter-spacing:0}
+.meta{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:12.8px;color:#e2eef9;margin-top:14px}
+.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:22px;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.18);border-radius:12px;overflow:hidden}
+.st{flex:1 1 125px;padding:12px 15px;border-right:1px solid rgba(255,255,255,.13)}
+.st:last-child{border-right:none}
+.st .n{font-size:21px;font-weight:760;line-height:1.2}
+.st .n.hot{color:#ffe08a}
+.st .l{font-size:11.5px;color:#c7dff2;margin-top:2px}
+
+section{margin-top:26px}
+h2{font-size:18px;font-weight:730;letter-spacing:-.01em;margin-bottom:12px;padding-left:11px;
+  border-left:4px solid var(--blue2)}
+h2 small{font-size:12.5px;font-weight:500;color:var(--ink3);margin-left:8px;letter-spacing:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:13px 16px;
+  font-size:12.8px;color:#78350f;line-height:1.85}
+.note b{color:#7c2d12}
+.note ul{margin:6px 0 0 18px}
+.note li{margin-bottom:3px}
+.lead{background:#eaf2fb;border:1px solid #cfe0f2;border-left:4px solid var(--blue2);
+  border-radius:10px;padding:15px 18px;font-size:14px;line-height:1.85}
+.lead b{color:var(--blue)}
+.lead .big{font-size:15.5px;font-weight:750;color:var(--blue);display:block;margin-bottom:5px}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:12.8px}
+.tbl th{background:#fafbfd;text-align:left;font-size:11.5px;font-weight:700;color:var(--ink3);
+  padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap;letter-spacing:.03em}
+.tbl td{padding:10px;border-bottom:1px solid var(--line2);vertical-align:top;word-break:break-word}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tbody tr:hover{background:#fbfcfe}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.sq{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border-radius:6px;
+  background:var(--blue);color:#fff;font-size:12px;font-weight:700;flex:0 0 auto}
+.lv{display:inline-block;font-size:10.8px;font-weight:800;padding:2px 8px;border-radius:99px;color:#fff;white-space:nowrap}
+.lv.A{background:var(--a)}.lv.B{background:var(--b)}.lv.C{background:var(--c)}
+.mut{color:var(--ink3)}
+.mono{font-variant-numeric:tabular-nums}
+
+/* match cards */
+.mcard{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+  margin-bottom:11px;overflow:hidden}
+.mcard.done{opacity:.58}
+.mhd{display:flex;align-items:flex-start;gap:10px;padding:13px 16px;background:#fafbfd;border-bottom:1px solid var(--line2);flex-wrap:wrap}
+.mhd .rank{font-size:11px;font-weight:800;color:var(--ink3);min-width:22px;padding-top:3px}
+.mhd .jname{font-size:15.5px;font-weight:730;line-height:1.4}
+.mhd .co{font-size:12.3px;color:var(--ink2);margin-top:2px}
+.mhd .tags{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto;align-items:center}
+.tg{font-size:11px;padding:2px 9px;border-radius:6px;background:#f0f4fa;color:#54677f;font-weight:600;white-space:nowrap}
+.tg.sal{background:#fff4e5;color:#a35a06}
+.tg.edu{background:#eef8f5;color:#0b6b58}
+.chk{display:flex;align-items:center;gap:5px;font-size:11.8px;color:var(--ink2);cursor:pointer;
+  border:1px solid var(--line);border-radius:8px;padding:3px 9px;background:#fff;white-space:nowrap}
+.chk input{accent-color:var(--ok);cursor:pointer}
+.mbody{padding:13px 16px}
+.kv{font-size:12.4px;color:var(--ink2);line-height:1.8;margin-bottom:9px}
+.kv b{color:var(--ink);font-weight:650}
+.jd{font-size:12.7px;color:var(--ink2);background:#f8fafc;border:1px solid var(--line2);
+  border-radius:8px;padding:10px 12px;line-height:1.8;margin-bottom:10px}
+.jd b{color:var(--ink)}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.why div{border-radius:8px;padding:9px 11px;font-size:12.5px;line-height:1.75}
+.why .y{background:#eaf7f1;border:1px solid #c8e9db;color:#115e49}
+.why .g{background:#fff5e8;border:1px solid #f7dfba;color:#8a4b06}
+.why b{display:block;font-size:11px;letter-spacing:.05em;margin-bottom:2px;opacity:.85}
+.talk{font-size:12.3px;color:var(--ink2);background:#f1f6fc;border-left:3px solid var(--blue2);
+  padding:8px 11px;border-radius:0 7px 7px 0;line-height:1.75}
+.talk b{color:var(--blue)}
+.contact{font-size:12px;color:var(--ink3);margin-top:9px;padding-top:8px;border-top:1px dashed var(--line);line-height:1.8}
+.contact b{color:var(--ink2)}
+
+/* edge */
+.edge{background:#fff;border:1px solid #f2dfae;border-left:4px solid #e0a020;border-radius:10px;
+  padding:12px 15px;margin-bottom:9px;font-size:12.8px;line-height:1.8}
+.edge .t{font-weight:700;color:#8a5a08;margin-bottom:3px}
+.edge .tag{display:inline-block;font-size:11px;font-weight:700;background:#fff2cf;color:#8a5a08;
+  padding:1px 8px;border-radius:99px;margin-left:7px}
+
+/* library */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:11px}
+.toolbar input,.toolbar select{border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:8px 11px;font-size:13px;font-family:inherit;color:var(--ink);outline:none}
+.toolbar input{flex:1;min-width:200px}
+.toolbar input:focus,.toolbar select:focus{border-color:var(--blue2)}
+.cnt{font-size:12px;color:var(--ink3)}
+details.lib{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+details.lib>summary{cursor:pointer;padding:12px 16px;font-size:13.5px;font-weight:650;color:var(--blue);
+  background:#fafbfd;list-style:none}
+details.lib>summary::-webkit-details-marker{display:none}
+details.lib>summary::before{content:"▸ ";font-size:14px}
+details.lib[open]>summary::before{content:"▾ "}
+.libbody{padding:12px 14px}
+.jrow{cursor:pointer}
+.jrow td:first-child{color:var(--ink3);font-size:11.5px}
+.jdmore{background:#f8fbff;padding:12px 16px;font-size:12.6px;line-height:1.85;color:var(--ink2);
+  border-bottom:1px solid var(--line2)}
+.jdmore b{color:var(--ink)}
+.jdmore .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.jdmore .box{background:#fff;border:1px solid var(--line2);border-radius:8px;padding:9px 11px}
+.jdmore .lbl{font-size:11px;font-weight:700;color:var(--blue2);letter-spacing:.05em;margin-bottom:3px}
+
+/* bars */
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bar{margin-bottom:9px}
+.bar .lb{display:flex;justify-content:space-between;font-size:12.3px;color:var(--ink2);margin-bottom:3px}
+.bar .lb b{color:var(--ink)}
+.bar .track{height:9px;background:#eaf0f7;border-radius:99px;overflow:hidden}
+.bar .fill{height:100%;background:var(--blue2);border-radius:99px}
+.bar .fill.alt{background:#5b9bd5}
+
+ol.exec{margin-left:19px;font-size:13px;line-height:1.9}
+ol.exec li{margin-bottom:5px}
+.exec b{color:var(--blue)}
+footer{margin:30px 0 60px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:11.8px;color:var(--ink3);line-height:1.9}
+footer b{color:var(--ink2)}
+
+@media(max-width:760px){
+  .wrap{padding:0 13px}
+  h1{font-size:20px}
+  .st{flex:1 1 33.3%;padding:10px 12px}
+  .st .n{font-size:18px}
+  .why{grid-template-columns:1fr}
+  .bars{grid-template-columns:1fr}
+  .jdmore .grid{grid-template-columns:1fr}
+  .prog{margin-left:0}
+  .top .tt{width:100%}
+  .nav{gap:4px}
+  .nav a{font-size:11.5px;padding:3px 9px}
+}
+@media print{
+  .top{position:static}
+  .nav,.prog,.pbar{display:none}
+  details.lib>summary{display:none}
+  details.lib{display:block}
+  details.lib:not([open]) .libbody{display:block}
+  .mcard,section{break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+
+<style>
+.switch{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);
+  border-radius:10px;padding:11px 15px;font-size:13px;font-weight:650;color:var(--ink);cursor:pointer;
+  box-shadow:var(--shadow);margin-bottom:14px;user-select:none}
+.switch input{width:16px;height:16px;accent-color:var(--blue2);cursor:pointer}
+.switch .hint{font-weight:400;color:var(--ink3);font-size:12px;margin-left:auto}
+.tierbar{display:flex;align-items:center;gap:9px;margin:20px 0 10px;font-size:13px;font-weight:730;color:var(--blue)}
+.tierbar .n{font-size:11.5px;font-weight:700;color:#fff;background:var(--blue2);padding:2px 9px;border-radius:99px}
+.tierbar .ln{flex:1;height:1px;background:var(--line)}
+.salgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:7px;margin-top:12px}
+.salcell{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff}
+.salcell .v{font-size:14px;font-weight:730;color:var(--ink)}
+.salcell .m{font-size:11px;color:var(--ink3)}
+.salcell .c{font-size:11.5px;color:var(--blue2);font-weight:650}
+.salcell.pass{background:#eaf7f1;border-color:#bfe6d5}
+.salcell.eq{background:#fff7e8;border-color:#f6dfb4}
+.salcell.no{opacity:.62}
+.fitmark{font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;white-space:nowrap}
+.fitmark.hit{background:#e6f5ee;color:#0b6b58;border:1px solid #bfe6d5}
+.fitmark.near{background:#fff4e5;color:#a35a06;border:1px solid #f7dfba}
+.mini{font-size:12.5px;color:var(--ink2);line-height:1.8}
+.mini b{color:var(--ink)}
+.jdbox{font-size:12.3px;color:var(--ink2);background:#f8fafc;border:1px solid var(--line2);
+  border-radius:8px;padding:9px 11px;line-height:1.75;margin-top:8px}
+.warnline{font-size:12.2px;color:#8a4b06;background:#fff5e8;border-left:3px solid #ef8a17;
+  padding:7px 10px;border-radius:0 7px 7px 0;margin-top:8px;line-height:1.7}
+.equal-sec{display:none}
+.equal-sec.on{display:block}
+</style>
+
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span class="tt">11·13 双高协同 · 高薪岗位筛选</span>
+  <div class="nav">
+    <a href="#rule">换算口径</a><a href="#concl">结论</a><a href="#list">岗位清单</a>
+    <a href="#dist">薪资分布</a><a href="#excluded">排除说明</a>
+  </div>
+  <span class="prog" id="prog">已投 0 / 20</span>
+</div><div class="pbar"><i id="pbar"></i></div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="kicker">SUZHOU UNIVERSITY OF SCIENCE AND TECHNOLOGY · 2027 届</div>
+  <h1>月薪 10k 以上岗位筛选
+    <small>「双高协同」产学研对接专场招聘会 · 以你手上 10k offer 为基线，只保留更值得看的岗位</small></h1>
+  <div class="meta">
+    <span>2026-11-13 周五 14:00–16:30</span><span>石湖校区教工之家（三食堂隔壁）</span>
+    <span>1 号门入校，右转沿主路直行约 200 米后左转</span>
+  </div>
+  <div class="stats">
+    <div class="st"><div class="n">126</div><div class="l">官方岗位记录</div></div>
+    <div class="st"><div class="n">1,369</div><div class="l">招聘人数合计</div></div>
+    <div class="st"><div class="n hot">20</div><div class="l">严格 &gt;10k 岗位</div></div>
+    <div class="st"><div class="n">271</div><div class="l">这些岗位招人</div></div>
+    <div class="st"><div class="n">10</div><div class="l">涉及企业</div></div>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<section id="rule"><h2>一、换算口径 <small>先说清楚，避免误判</small></h2>
+<div class="note">
+  <b>官方表里只有「预计年薪」，单位是万元，全部是单值，没有区间。</b>所以必须先换算成月薪再筛：
+  <ul>
+    <li><b>10万元 ≠ 10k/月</b>：10万 ÷ 12 ≈ <b>8,333 元/月</b>，全表有 <b>21 条</b> 都在这个档，按字面看数字「10」会大量误收，已全部排除。</li>
+    <li><b>12万元 = 恰好 10,000 元/月</b>，与你现有 offer <b>持平</b>，不是「大于」。严格按「&gt;10k」应排除（17 条）；但「低于的不要看」又暗示持平可以看 —— 所以这 17 条单独做成<b>可选持平档</b>，用下面的开关打开。</li>
+    <li>主口径按 <b>12 薪</b>（官方表未标注 13 薪/年终奖月数）：月薪 = 年薪 × 10000 ÷ 12，条件即 <b>年薪 &gt; 12 万元</b>。若按 13 薪保守算，13万元刚好 10k 持平，只会多排除「泸州大成·营销管培生」1 条，其余 19 条不变。</li>
+    <li>部分岗位年薪含提成/奖金（如三六六教育「底薪+绩效+提成+年终奖」），用 12 去除会<b>高估固定月薪</b>，已在对应卡片标出。</li>
+  </ul>
+</div>
+<div class="lead" style="margin-top:12px">
+  <span class="big">数据源与规模</span>
+  官方《"双高协同"产学研对接专场招聘会企业及岗位信息列表》：企业列表 52 家，完整岗位信息表 126 条岗位记录（53 个企业块）。
+  微信通知写「52 家用人单位、提供近 1300 个招聘岗位」，其中 <b>近 1300 是招聘人数合计（1,369 人），不是岗位条目数</b>，别被这个数字带偏。
+  「单位名称/单位行业」原表为纵向合并省略写法，已按企业块向下填充；邮箱、联系人、所在区县保留原表空值，未做任何猜测补全。
+</div>
+</section>
+
+<section id="concl"><h2>二、结论先看 <small>按你的计算机·软件背景</small></h2>
+<div class="lead">
+  <span class="big">过了 10k 门槛之后，能投的技术岗只剩 2 个，而且都有硬伤</span>
+  严格 &gt;10k 的 20 个岗位里，<b>14 个是教育/教师类，其余是营销管培、餐饮储干、金融管培、机械设计</b>。
+  真正和计算机·软件沾边的只有 <b>2 个</b>：<br>
+  ① <b>上海邦芒 · 技术研发管培生</b>（15万 / 12.5k，计算机相关本科可投）—— 明确写计算机专业，但工作地上海、带管培轮岗色彩，编码占比要现场问清。<br>
+  ② <b>苏州安驰 · 嵌入式软件工程师</b>（18万 / 15k，全场软件岗最高）—— 平台学历字段写「硕士」，但 JD 正文写「本科及以上」，<b>现场第一句就问 HR 本科能不能投</b>；且要求精通 C 语言 + MCU + EtherCAT/CANopen，和你的 Java/上位机栈有距离。<br><br>
+  <b>最值得注意的反而是持平档</b>：全场与你背景最对口的 <b>安驰 · NET开发工程师</b>（C#/.NET + 上位机 + 串口/TCP + SQL，计算机/软件本科）年薪正好 12 万 = 10k，与现有 offer 持平，被严格口径排除了。
+  打开下方开关把它放回来 —— 这个岗值得你去聊，但它的意义是「方向更对口」，不是「薪资更高」。
+</div>
+<div class="note" style="margin-top:12px">
+  <b>现场取舍建议</b>：如果目标是「薪资必须高于 10k」，这场会基本只有安驰（18万嵌入式，需确认本科）和上海邦芒（15万技术研发）两个展位值得去，
+  其余时间不如留给一站式就业服务专区的简历门诊。如果愿意接受持平但方向对口，安驰一个展位能同时问 NET 开发、测试装备、研发测试三条线，效率最高。
+</div>
+</section>
+
+<section id="list"><h2>三、岗位清单 <small>默认只显示严格 &gt;10k，勾选可加上持平档</small></h2>
+<label class="switch"><input type="checkbox" id="swEqual">
+  <span>包含「恰好 10k / 年薪 12 万」的持平岗位（+17 条）</span>
+  <span class="hint" id="cntHint">当前显示 20 条</span></label>
+<div id="cardList"></div>
+
+<div class="equal-sec" id="equalSec">
+  <div class="tierbar"><span class="n">持平档</span><span>恰好 10k / 年薪 12 万 · 17 条</span><span class="ln"></span></div>
+  <div id="equalList"></div>
+</div>
+</section>
+
+<section id="dist"><h2>四、全表薪资分布 <small>126 条：119 条有值 + 7 条空</small></h2>
+<div class="card"><div class="mini" style="margin-bottom:6px">
+  绿色 = 严格 &gt;10k（已保留）｜黄色 = 恰好 10k（可选持平档）｜灰淡 = 低于 10k（已排除）。
+  括号里是折 12 薪月薪，方便你直接和手上的 10k 比。
+</div><div class="salgrid" id="distGrid"></div></div>
+</section>
+
+<section id="excluded"><h2>五、排除说明 <small>哪些没进、为什么</small></h2>
+<div class="card">
+  <div class="mini">
+    <p><b>① 年薪 ≤ 12 万元：99 条</b> —— 折 12 薪月薪 ≤ 10,000 元，不满足「大于 10k」。其中 <b>10万元 21 条</b> 最易误判（实际 8,333 元/月，含盛合晶微 8 个岗、无锡学大教学教师 50 人、伟创力实习生等）；<b>11.7万元 1 条</b>（扬杰电子潜龙学员，9,750 元/月，招 200 人）是全表最接近门槛的一条，可惜仍差一点。</p>
+    <p style="margin-top:8px"><b>② 年薪 = 12 万元：17 条</b> —— 恰好持平，已放进上方「可选持平档」，默认不显示。</p>
+    <p style="margin-top:8px"><b>③ 年薪为空：7 条</b> —— 无法判断是否过线，<b>不建议直接排除</b>。这几家是现场追加的信息不完整记录，其中「苏州星宇智能科技」的岗位名里明确含<b>软件助理工程师、视觉助理工程师</b>，值得顺路问一句薪资。列表见下方。</p>
+    <p style="margin-top:8px"><b>④ 学历门槛</b>：安驰硬件工程师、力神电池研发工程师写「硕士/全日制研究生及以上」，本科不符合，虽薪资达标但已在卡片里标注，别白排队。</p>
+  </div>
+  <div class="scroll" style="margin-top:12px"><table class="tbl">
+    <thead><tr><th>原表行</th><th>企业</th><th>岗位</th><th>人数</th><th>学历</th><th>联系人</th></tr></thead>
+    <tbody id="noSalBody"></tbody>
+  </table></div>
+</div>
+</section>
+
+<section><h2>六、数据来源与诚实性</h2>
+<div class="card mini">
+  <p>· 岗位、年薪、学历、职责、邮箱、联系人全部来自用户提供的官方 Excel《"双高协同"产学研对接专场招聘会企业及岗位信息列表》，<b>逐格照录</b>，未做任何推断补数。</p>
+  <p>· 时间地点、52 家企业、入场路线、现场服务来自校就业公众号推文（2026-11-12 17:32 发布）。</p>
+  <p>· 「折 12 薪月薪」「折 13 薪月薪」是<b>换算值</b>，不是企业承诺的月薪；官方表未标注薪资月数，实际以 HR 口头/合同为准。</p>
+  <p>· 邮箱为空的岗位保留了空值（原表如此），现场可直接问展位要投递方式。</p>
+  <p>· 本页是「薪资门槛筛选」，<b>不再自动按专业过滤</b>；计算机背景相关度用「对口 / 沾边」标签单独标出，由你自己判断。</p>
+  <p style="margin-top:8px" class="mut">生成时间 2026-11-13 · 勾选状态存在本机浏览器（localStorage），换设备不同步。</p>
+</div>
+</section>
+
+<div style="height:40px"></div>
+</div>
+
+<script>
+const DATA = {"rows": [{"row": 34, "co": "泸州大成浓香酒类销售有限公司", "ind": "酒、饮料和精制茶制造业", "area": "", "job": "营销管培生", "contact": "于嘉", "mail": "yujia316988971@163.com", "num": 20, "salary": 13, "cat": "商业和服务业人员", "edu": "本科", "jd": "本科及以上，市场营销、食品、药学、公共管理等相关专业，应届生优先；沟通表达良好，学习力、执行力与抗压能力强；能接受区域出差、市场一线工作。", "fit": "", "fitnote": "13薪口径下恰好 10k 持平，是两种口径唯一分歧点", "tier": "over", "month": 10833, "month13": 10000}, {"row": 35, "co": "苏州市姑苏区引智教育培训中心有限公司", "ind": "教育", "area": "", "job": "初高中英语老师", "contact": "夏洁", "mail": "1156684072@qq.com", "num": 2, "salary": 15, "cat": "教学人员", "edu": "本科", "jd": "本科及以上，经验不限，持教师资格证优先；专业不限，热爱教育行业。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 36, "co": "苏州市姑苏区引智教育培训中心有限公司", "ind": "教育", "area": "", "job": "初高中理科老师", "contact": "", "mail": "", "num": 5, "salary": 15, "cat": "教学人员", "edu": "本科", "jd": "本科及以上，经验不限，持教师资格证优先；专业不限，热爱教育行业。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 46, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "嵌入式软件工程师", "contact": "", "mail": "", "num": 10, "salary": 18, "cat": "其他人员", "edu": "硕士", "jd": "本科及以上学历，电力电子、控制工程、自动化等相关专业；熟悉 ST/TI/GD 等 MCU，精通 C 语言；熟悉 EtherCAT、CANopen 等工业通讯协议。", "fit": "hit", "fitnote": "本场薪资最高的软件岗。平台学历字段写「硕士」，但 JD 任职资格写的是「本科及以上」——现场务必向 HR 确认本科能否投，能投则优先级最高", "tier": "over", "month": 15000, "month13": 13846}, {"row": 47, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "硬件工程师", "contact": "", "mail": "guwenxia@synmatic.com", "num": 10, "salary": 18, "cat": "其他人员", "edu": "硕士", "jd": "全日制研究生及以上，电力电子/电气工程/自动化；精通 IGBT/SiC 驱动与双脉冲测试、安规绝缘、EMC 整改，熟悉反激/LLC 辅助电源。", "fit": "", "fitnote": "JD 明确「全日制研究生及以上」，本科不符合", "tier": "over", "month": 15000, "month13": 13846}, {"row": 63, "co": "力神电池（苏州）有限公司", "ind": "其他制造业", "area": "", "job": "研发工程师", "contact": "", "mail": "", "num": 10, "salary": 15, "cat": "工程技术人员", "edu": "硕士", "jd": "硕士及以上学历，电化学材料类专业。", "fit": "", "fitnote": "学历与专业双重不符", "tier": "over", "month": 12500, "month13": 11538}, {"row": 65, "co": "苏州三六六教育投资有限公司", "ind": "教育", "area": "", "job": "市场专员（专业不限，不负责教学）", "contact": "裴老师", "mail": "309465983@qq.com", "num": 8, "salary": 15, "cat": "其他人员", "edu": "专科及以上", "jd": "专业不限，能吃苦，男生优先；有亲和力、表达好；有销售经验优先；会用视频制作 APP。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 66, "co": "苏州三六六教育投资有限公司", "ind": "教育", "area": "", "job": "教育咨询师", "contact": "裴玲萍", "mail": "", "num": 20, "salary": 15, "cat": "其他人员", "edu": "专科及以上", "jd": "大专及以上，教育学/心理学/市场营销优先；沟通与商务谈判能力强。福利写「底薪+绩效奖金+提成」「年终奖」——年薪含浮动成分，固定月薪可能低于 12.5k。", "fit": "", "fitnote": "薪资含提成，需现场问清底薪", "tier": "over", "month": 12500, "month13": 11538}, {"row": 67, "co": "苏州三六六教育投资有限公司", "ind": "教育", "area": "", "job": "初高数理化教师", "contact": "李琳", "mail": "320940659@qq.com", "num": 10, "salary": 18, "cat": "教学人员", "edu": "本科", "jd": "本科及以上；有家教/学校/培训机构任教经验优先；普通话标准，可接受优秀应届生。", "fit": "", "fitnote": "", "tier": "over", "month": 15000, "month13": 13846}, {"row": 68, "co": "苏州三六六教育投资有限公司", "ind": "教育", "area": "", "job": "学管师", "contact": "李老师", "mail": "309465983@qq.com", "num": 10, "salary": 20, "cat": "其他人员", "edu": "专科及以上", "jd": "专科及以上；有亲和力、形象气质佳；熟练办公软件；执行力强、能承受较大工作压力。", "fit": "", "fitnote": "全场年薪最高（16.7k/月），但是教务管理岗，不是技术岗", "tier": "over", "month": 16667, "month13": 15385}, {"row": 70, "co": "上海邦芒企业管理有限公司", "ind": "软件和信息技术服务业", "area": "", "job": "市场营销管培生", "contact": "章洁琛", "mail": "zhaopin@50bm.com", "num": 5, "salary": 15, "cat": "商业和服务业人员", "edu": "本科", "jd": "营销、经管类本科及以上，有校园或创业实践经历；掌握基础营销知识，熟练 Office；有志于深耕人力资源数字化领域。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 71, "co": "上海邦芒企业管理有限公司", "ind": "软件和信息技术服务业", "area": "", "job": "财务管理管培生", "contact": "", "mail": "", "num": 5, "salary": 15, "cat": "商业和服务业人员", "edu": "本科", "jd": "财会、财政等财税专业本科及以上；熟悉财税政策法规，熟练 Office。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 72, "co": "上海邦芒企业管理有限公司", "ind": "软件和信息技术服务业", "area": "", "job": "人力资源管培生", "contact": "", "mail": "", "num": 5, "salary": 15, "cat": "商业和服务业人员", "edu": "本科", "jd": "经管、营销、数据类专业本科及以上；熟悉 HR 各模块知识。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 73, "co": "上海邦芒企业管理有限公司", "ind": "软件和信息技术服务业", "area": "", "job": "技术研发管培生", "contact": "", "mail": "", "num": 5, "salary": 15, "cat": "工程技术人员", "edu": "本科", "jd": "计算机相关专业本科及以上；熟练掌握对应技术技能；逻辑、沟通良好，具备开发及流程意识；有志于深耕人力资源及人力资源数字化领域。", "fit": "hit", "fitnote": "严格 >10k 档里唯一明确写「计算机相关专业」且本科可投的岗。风险：工作地上海，且带明显管培轮岗色彩，编码占比要现场问清", "tier": "over", "month": 12500, "month13": 11538}, {"row": 74, "co": "上海邦芒企业管理有限公司", "ind": "软件和信息技术服务业", "area": "", "job": "项目运营管培生", "contact": "", "mail": "", "num": 5, "salary": 15, "cat": "商业和服务业人员", "edu": "本科", "jd": "经管、营销、管理类本科及以上；了解人力资源、项目管理或营销知识。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 77, "co": "苏州吾悦商业管理有限公司", "ind": "商务服务业", "area": "", "job": "筑梦生-营运管理", "contact": "石峰", "mail": "shifeng@xincheng.com", "num": 3, "salary": 15, "cat": "经济业务人员", "edu": "本科", "jd": "2026届统招本科及以上，专业不限，担任社团/院系/班级干部优先。", "fit": "", "fitnote": "面向 2026 届，2027 届需现场确认是否可投", "tier": "over", "month": 12500, "month13": 11538}, {"row": 78, "co": "苏州吾悦商业管理有限公司", "ind": "商务服务业", "area": "", "job": "筑梦生", "contact": "石先生", "mail": "", "num": 3, "salary": 15, "cat": "经济业务人员", "edu": "本科", "jd": "全日制本科/研究生，专业不限。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 100, "co": "苏州熠文汇智文化咨询有限公司", "ind": "教育", "area": "", "job": "数理化教师", "contact": "马丽艳", "mail": "2264002924@qq.com", "num": 30, "salary": 15, "cat": "教学人员", "edu": "本科", "jd": "均可培养。", "fit": "", "fitnote": "招 30 人，是本档招聘人数最多的教育岗", "tier": "over", "month": 12500, "month13": 11538}, {"row": 104, "co": "江苏七欣天餐饮管理连锁有限公司", "ind": "餐饮业", "area": "", "job": "储干/管培生", "contact": "莫经理", "mail": "zhaopin@qixintian.com", "num": 100, "salary": 15, "cat": "商业和服务业人员", "edu": "专科及以上", "jd": "全日制大专及以上（或半年以上餐饮管理经验）；适应倒班和高效工作环境；喜爱连锁餐饮行业。", "fit": "", "fitnote": "招 100 人，占本档招聘人数 37%；倒班制", "tier": "over", "month": 12500, "month13": 11538}, {"row": 113, "co": "上海太易检测技术股份有限公司", "ind": "专用设备制造业", "area": "", "job": "机械设计工程师", "contact": "杨若羽", "mail": "yangruoyu@techik.cn", "num": 5, "salary": 15, "cat": "工程技术人员", "edu": "本科", "jd": "机械、过程装备等机械类专业全日制本科及以上，熟练使用 SolidWorks。", "fit": "", "fitnote": "", "tier": "over", "month": 12500, "month13": 11538}, {"row": 37, "co": "苏州吴中万达广场商业管理有限公司", "ind": "房地产业", "area": "", "job": "万信生", "contact": "潘明娜", "mail": "szwzwanda188@163.com", "num": 10, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "应届全日制本科及以上，专业不限，市场营销/新闻学/广告学优先；文字功底扎实；会 PS、AutoCAD、2D max 优先。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 38, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "质量工程师", "contact": "顾文霞", "mail": "hr@synmatic.com", "num": 5, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "质量管理工程、机械、电气、工业工程、材料等专业；逻辑清晰、数据敏感；英语 CET-4 以上。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 39, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "研发测试工程师", "contact": "", "mail": "", "num": 10, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "自动化、测控、电气、通信、电子、汽车电子等；熟练掌握数电、模电、电力电子、单片机原理。", "fit": "near", "fitnote": "自动化测试/测试脚本沾边，但主干是硬件电路白盒测试", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 40, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "NET开发工程师", "contact": "", "mail": "", "num": 2, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "计算机/软件/自动化相关本科应届生；熟练 C#，了解 .NET；会基础 SQL；有上位机、串口/TCP 通讯项目经验优先。", "fit": "hit", "fitnote": "全场与你计算机·软件背景最对口的软件开发岗，但年薪 12 万恰好 = 10k/月，与现有 offer 持平，不属于「大于 10k」", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 41, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "制造工程师", "contact": "", "mail": "", "num": 2, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "机械/自动化/工业工程/机电本科应届生；能识图纸，熟悉精益生产；愿意常驻生产现场。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 43, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "行销工程师", "contact": "", "mail": "", "num": 10, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "自动化/机电/电气/测控本科应届生；看懂图纸，方案撰写与沟通良好，可接受出差。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 45, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "工艺工程师", "contact": "", "mail": "", "num": 5, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "全日制本科，机械/电气/机电/材料成型等；懂机械装配识图、公差与装配工艺；会 CAD/SolidWorks。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 48, "co": "苏州安驰控制系统有限公司", "ind": "其他制造业", "area": "", "job": "测试装备开发工程师", "contact": "", "mail": "hr@synmatic.com", "num": 4, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "自动化/测控/机电/电气本科应届生；会 SolidWorks/CAD，了解 PLC、传感器、数据采集；有 LabVIEW、通讯、ATE 工装开发经验优先。", "fit": "near", "fitnote": "含测试脚本与数据采集，偏测控机电；与 NET 开发岗同一展位", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 49, "co": "国联民生证券股份有限公司苏州中山南路证券营业部", "ind": "其他金融业", "area": "", "job": "分支机构管培生（财富规划师）", "contact": "徐淑莹", "mail": "xushy@glms.com.cn", "num": 10, "salary": 12, "cat": "金融业务人员", "edu": "本科", "jd": "2026届应届本科及以上；通过证券从业资格考试或有金融机构实习优先；具备经济金融知识与合规意识。", "fit": "", "fitnote": "面向 2026 届，2027 届需现场确认", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 57, "co": "林德（中国）叉车有限公司苏州分公司", "ind": "专用设备制造业", "area": "", "job": "销售培训生（常州）", "contact": "叶女士", "mail": "Yuexiang.Ye@kiongroup.com", "num": 1, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "2027届本科，专业不限；沟通与团队合作好；对销售感兴趣，能抗压；在校成绩优秀。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 58, "co": "林德（中国）叉车有限公司苏州分公司", "ind": "专用设备制造业", "area": "", "job": "销售培训生（苏州）", "contact": "", "mail": "", "num": 1, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "2027届本科，专业不限；沟通与团队合作好；对销售感兴趣，能抗压；在校成绩优秀。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 59, "co": "林德（中国）叉车有限公司苏州分公司", "ind": "专用设备制造业", "area": "", "job": "销售培训生（扬州）", "contact": "", "mail": "", "num": 1, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "2027届本科，专业不限；沟通与团队合作好；对销售感兴趣，能抗压；在校成绩优秀。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 60, "co": "林德（中国）叉车有限公司苏州分公司", "ind": "专用设备制造业", "area": "", "job": "销售培训生（泰州）", "contact": "", "mail": "", "num": 1, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "2027届本科，专业不限；沟通与团队合作好；对销售感兴趣，能抗压；在校成绩优秀。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 101, "co": "伟创力电脑（苏州）有限公司", "ind": "汽车制造业", "area": "", "job": "管培生（生产管理）", "contact": "Betty Wang", "mail": "Betty.Wang1@flex.com", "num": 3, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "智能制造、机电一体化、机械、电气自动化、工业工程、电子信息等；英文可作工作语言；转正后需配合加班和夜班。", "fit": "near", "fitnote": "电子信息相关，但方向是生产管理，且需夜班", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 107, "co": "苏州朗伯威智造科技有限公司", "ind": "仪器仪表制造业", "area": "", "job": "技术型销售工程师", "contact": "周远泽", "mail": "zhouyuanze@lamberv.com", "num": 10, "salary": 12, "cat": "其他人员", "edu": "本科", "jd": "计算机、光电、通信、机械、自动化、电子信息等理工科优先，愿意走技术型销售路线；逻辑表达与沟通好，能适应出差。", "fit": "near", "fitnote": "明确写计算机优先，但本质是 To B 技术销售，不写代码", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 112, "co": "苏州晶方半导体科技股份有限公司", "ind": "计算机、通信和其他电子设备制造业", "area": "", "job": "助理工程师（2027应届毕业生）", "contact": "吴静", "mail": "zhaopin@wlcsp.com", "num": 20, "salary": 12, "cat": "工程技术人员", "edu": "本科", "jd": "普通高校统招全日制本科及以上；含经教育部认证的海外留学归国人员。", "fit": "near", "fitnote": "上市公司、招 20 人，但岗位方向笼统，需现场问能否分流到软件/数据方向", "tier": "equal", "month": 10000, "month13": 9231}, {"row": 116, "co": "瑞众人寿保险有限责任公司苏州分公司", "ind": "保险业", "area": "", "job": "2027届英才管培生", "contact": "潘兆诚", "mail": "panzhaocheng@ruiinsurance.com", "num": 4, "salary": 12, "cat": "金融业务人员", "edu": "本科", "jd": "2027届本科及以上；专业不限，保险/金融/经济/医学优先；可接受在苏州市镇区工作。", "fit": "", "fitnote": "", "tier": "equal", "month": 10000, "month13": 9231}], "noSalary": [[121, "苏州康诺工程技术咨询有限公司", "给排水、电气、暖通 设计工程师", "吴女士", 3, "本科或研究生"], [122, "苏州星宇智能科技股份有限公司", "机械设计助理工程师；电气助理工程师；软件助理工程师；视觉助理工程师", "罗扬博", 10, ""], [123, "苏州天标检测技术有限公司", "化学测试工程师；机械测试工程师；电子测试工程师", "刘超勇", 9, ""], [124, "天合建设集团有限公司", "施工员", "夏宇豪", 3, ""], [125, "倍永環保科技（上海）有限公司", "項目工程師", "劉藍琪", 5, ""], [126, "大华会计师事务所（特殊普通合伙）苏州分所", "审计实习生", "缪凌知", 20, ""], [127, "苏州新链智能科技有限公司", "外贸专员实习生", "王瑾", 4, ""]], "dist": [[4, 1], [4.8, 1], [6, 15], [6.6, 1], [7, 10], [7.2, 2], [7.5, 1], [8, 15], [8.5, 1], [9, 12], [10, 21], [10.6, 1], [11.7, 1], [12, 17], [13, 1], [15, 15], [18, 3], [20, 1]], "stats": {"total": 126, "totalPeople": 1369, "over": 20, "equal": 17, "overPeople": 271, "equalPeople": 99, "overCo": 10, "allCo": 17, "excluded": 106, "noSalary": 7, "hits": 2}};
+const KEY = 'usts-1113-salary10k-v1';
+let done = {};
+try { done = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = s => esc(s).replace(/\\n/g, '<br>');
+
+function card(r, i) {
+  const fit = r.fit === 'hit' ? '<span class="fitmark hit">计算机对口</span>'
+            : r.fit === 'near' ? '<span class="fitmark near">沾边</span>' : '';
+  const warn = r.fitnote ? '<div class="warnline"><b>提示：</b>' + esc(r.fitnote) + '</div>' : '';
+  const contact = [r.contact ? '<b>联系人</b> ' + esc(r.contact) : '',
+                   r.mail ? '<b>邮箱</b> ' + esc(r.mail) : '',
+                   r.area ? '<b>区县</b> ' + esc(r.area) : '',
+                   r.ind ? '<b>行业</b> ' + esc(r.ind) : ''].filter(Boolean).join(' &nbsp;·&nbsp; ');
+  return `<div class="mcard ${done[r.row] ? 'done' : ''}" data-row="${r.row}">
+    <div class="mhd">
+      <span class="rank">${i}</span>
+      <div><div class="jname">${esc(r.job)}</div><div class="co">${esc(r.co)}</div></div>
+      <div class="tags">
+        ${fit}
+        <span class="tg sal">${r.salary}万 / ≈${r.month.toLocaleString()}元·月</span>
+        <span class="tg">招 ${r.num} 人</span>
+        <span class="tg edu">${esc(r.edu)}</span>
+        <span class="tg">${esc(r.cat)}</span>
+        <label class="chk"><input type="checkbox" class="ck" data-row="${r.row}" ${done[r.row] ? 'checked' : ''}> 已投</label>
+      </div>
+    </div>
+    <div class="mbody">
+      <div class="kv"><b>13 薪口径</b> ≈ ${r.month13.toLocaleString()} 元/月 &nbsp;·&nbsp; <b>原表行号</b> ${r.row} &nbsp;·&nbsp; ${r.tier === 'over' ? '<b>严格 &gt;10k</b>' : '<b>恰好 =10k（持平）</b>'}</div>
+      <div class="jdbox"><b>任职职责 / 要求：</b><br>${fmt(r.jd)}</div>
+      ${warn}
+      ${contact ? '<div class="contact">' + contact + '</div>' : '<div class="contact mut">原表未填联系人与邮箱，现场向展位索取</div>'}
+    </div>
+  </div>`;
+}
+
+function render() {
+  const over = DATA.rows.filter(r => r.tier === 'over');
+  const equal = DATA.rows.filter(r => r.tier === 'equal');
+  document.getElementById('cardList').innerHTML = over.map((r,i) => card(r, i+1)).join('');
+  document.getElementById('equalList').innerHTML = equal.map((r,i) => card(r, i+1)).join('');
+  document.getElementById('distGrid').innerHTML = DATA.dist.map(([v,c]) => {
+    const m = Math.round(v*10000/12);
+    const cls = v > 12 ? 'pass' : v === 12 ? 'eq' : 'no';
+    return `<div class="salcell ${cls}"><div class="v">${v}万</div>
+      <div class="m">≈${m.toLocaleString()}元/月</div><div class="c">${c} 岗</div></div>`;
+  }).join('');
+  document.getElementById('noSalBody').innerHTML = DATA.noSalary.map(r =>
+    `<tr><td class="mono">${r[0]}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td>
+     <td class="mono">${r[4]}</td><td>${esc(r[5]) || '<span class="mut">未填</span>'}</td><td>${esc(r[3])}</td></tr>`).join('');
+  bind();
+  progress();
+}
+
+function bind() {
+  document.querySelectorAll('.ck').forEach(cb => cb.addEventListener('change', e => {
+    const row = e.target.dataset.row;
+    if (e.target.checked) done[row] = new Date().toLocaleString('zh-CN'); else delete done[row];
+    localStorage.setItem(KEY, JSON.stringify(done));
+    e.target.closest('.mcard').classList.toggle('done', e.target.checked);
+    progress();
+  }));
+}
+
+function progress() {
+  const on = document.getElementById('swEqual').checked;
+  const visible = on ? DATA.rows : DATA.rows.filter(r => r.tier === 'over');
+  const n = visible.filter(r => done[r.row]).length;
+  document.getElementById('prog').textContent = `已投 ${n} / ${visible.length}`;
+  document.getElementById('pbar').style.width = (visible.length ? n/visible.length*100 : 0) + '%';
+  document.getElementById('cntHint').textContent = on
+    ? `当前显示 ${DATA.rows.length} 条（含持平 ${DATA.stats.equal} 条）`
+    : `当前显示 ${DATA.stats.over} 条`;
+}
+
+document.getElementById('swEqual').addEventListener('change', e => {
+  document.getElementById('equalSec').classList.toggle('on', e.target.checked);
+  progress();
+});
+
+render();
+</script>
+</body></html>
